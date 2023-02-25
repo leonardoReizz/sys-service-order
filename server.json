@@ -1,0 +1,21 @@
+{
+  "products": [
+    {
+      "code": "32897319283",
+      "name": "SSD 140GB",
+      "priceSale": "100",
+      "pricePurchase": "200",
+      "description": "SSH Terabybite",
+      "id": 3
+    },
+    {
+      "code": "20319293",
+      "name": "Mouse Gamer Pichau ",
+      "priceSale": "100",
+      "pricePurchase": "300",
+      "stock": "30",
+      "description": "Pichau",
+      "id": 5
+    }
+  ]
+}
