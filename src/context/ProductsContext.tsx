@@ -15,6 +15,7 @@ interface ProductsContextType {
   products: IProduct[];
   currentProduct: IProduct | null;
   createNewProduct: (newProducts: Omit<IProduct,'id'>) => Promise<void>;
+  updateProduct: (updateProduct: IProduct) => Promise<void>;
   changeCurrentProduct: (newCurrentProduct: IProduct | null) => void;
   fetchProducts: (query?: string) => Promise<void>;
   deleteProduct: (productId: number) => Promise<void>;
@@ -39,24 +40,40 @@ export function ProductsContextProvider({children}: ProductsContextProviderProps
     const response = await apiProduct.createProduct(data);
 
     setProducts(state => [response, ...state])
-  },[products]);
+  }, [products]);
 
   const changeCurrentProduct = useCallback((newCurrentProduct: IProduct | null) => {
     setCurrentProduct(newCurrentProduct)
-  },[])
+  }, [])
 
   const deleteProduct = useCallback(async (productId: number) => {
     await apiProduct.deleteProduct(productId)
 
     setProducts(state => state.filter(product => product.id !== productId))
-  }, [products])
+  }, [products]);
+
+  const updateProduct = useCallback(async (updateProduct: IProduct) => {
+    const response = await apiProduct.updateProduct(updateProduct);
+
+    const filter = products.filter(product => product.id !== updateProduct.id);
+
+    setProducts([response, ...filter]);
+  }, [products]);
 
   useEffect(() => {
     fetchProducts();
-  },[ ]);
+  }, []);
   
   return (
-    <ProductsContext.Provider value={{products, currentProduct, fetchProducts, createNewProduct, changeCurrentProduct ,deleteProduct}}>
+    <ProductsContext.Provider value={{
+      products, 
+      currentProduct, 
+      fetchProducts, 
+      createNewProduct, 
+      changeCurrentProduct, 
+      deleteProduct,
+      updateProduct,
+    }}>
       {children}
     </ProductsContext.Provider>
   )
