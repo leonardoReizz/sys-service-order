@@ -1,42 +1,44 @@
 import { CurrencyCircleDollar, HouseSimple, Package, SignOut, UsersThree, Wrench } from "phosphor-react";
+import { Link, useLocation } from "react-router-dom";
 import { Footer, SidebarContainer } from "./styles";
 
 export function Sidebar() {
+  const { pathname } = useLocation();
   return (
     <SidebarContainer>
       <header>
         <h2>OS</h2>
       </header>
       <ul>
-        <li>
-          <a href="/dashboard">
+        <li className={pathname.includes('dashboard') ? 'active' : ''}>
+          <Link to="/dashboard">
             <HouseSimple />
             Dashboard
-          </a>
+          </Link>
         </li>
-        <li>
-          <a href="/products">
+        <li className={pathname.includes('products') ? 'active' : ''}>
+          <Link to="/products">
             <Package />
             Produtos
-          </a>
+          </Link>
         </li>
-        <li>
-          <a href="/clients">
+        <li className={pathname.includes('clients') ? 'active' : ''}>
+          <Link to="/clients">
             <UsersThree />
             Clientes
-          </a>
+          </Link>
         </li>
-        <li>
-          <a href="/serviceOrder">
+        <li className={pathname.includes('serviceOrder') ? 'active' : ''}>
+          <Link to="/serviceOrder">
             <Wrench />
             Ordens de Serviço
-          </a>
+          </Link>
         </li>
-        <li>
-          <a href="/financial">
+        <li className={pathname.includes('financial') ? 'active' : ''}>
+          <Link to="/financial">
             <CurrencyCircleDollar />
             Financeiro
-          </a>
+          </Link>
         </li>
         {/* <li><a href="">Relatorios</a></li> */}
       </ul>
