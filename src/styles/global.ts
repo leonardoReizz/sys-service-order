@@ -30,6 +30,10 @@ export const GlobalStyle = createGlobalStyle`
     font: 400 .9rem 'UntitledSans', sans-serif;
   }
 
+  h1,h2,h3,h4,h5 {
+    font-family: 'Roboto', sans-serif;
+  }
+
   :focus {
     outline: 0;
     box-shadow: 0 0 0 2px ${(props) => props.theme['yellow-300']};
