@@ -18,7 +18,7 @@ interface CreateProductFormType {
 }
 
 export function CreateProductModal({ closeProductModal } : CreateProductModalProps) {
-  const { createNewProduct, currentProduct, deleteProduct } = useContext(ProductsContext);
+  const { createNewProduct, currentProduct, deleteProduct, updateProduct } = useContext(ProductsContext);
   const { register, handleSubmit, reset } = useForm<CreateProductFormType>();
 
   useEffect(() => {
@@ -31,11 +31,11 @@ export function CreateProductModal({ closeProductModal } : CreateProductModalPro
   
   async function handleSubmitForm(data: any) {
     if(currentProduct) {
-
+      await updateProduct(data)
     } else {
       await createNewProduct(data)
     }
-    reset();
+    reset({});
     closeProductModal();
   }
 
