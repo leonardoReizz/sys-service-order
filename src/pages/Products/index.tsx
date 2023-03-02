@@ -3,12 +3,12 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import { NewProductButton, ProductsContainer, ProductsHeader, ProductsTable } from "./styles";
 import * as Dialog from '@radix-ui/react-dialog'
 import { CreateProductModal } from "./components/CreateProductModal";
-import { SearchForm } from "./components/SearchForm";
+import { SearchForm } from "../../components/SearchForm";
 import { IProduct, ProductsContext } from "../../context/ProductsContext";
 
 export function Products() {
   const [isOpenProductModal, setOpenProductModal] = useState<boolean>(false);
-  const { products, changeCurrentProduct } = useContext(ProductsContext)
+  const { products, changeCurrentProduct, fetchProducts } = useContext(ProductsContext)
   
   const closeProductModal = useCallback(() => {
     setOpenProductModal(false);
@@ -24,16 +24,10 @@ export function Products() {
     setOpenProductModal(true);
   }
 
-  useEffect(() => {
-    if(!openProductModal) {
-      changeCurrentProduct(null)
-    }
-  }, [openProductModal])
-
   return (
     <ProductsContainer>
       <ProductsHeader >
-        <SearchForm />
+        <SearchForm search={fetchProducts} inputText="Buscar produtos..." />
         <Dialog.Root open={isOpenProductModal} onOpenChange={openProductModal}>
           <Dialog.Trigger asChild>
             <NewProductButton>
