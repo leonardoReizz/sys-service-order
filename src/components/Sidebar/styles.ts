@@ -24,12 +24,20 @@ export const SidebarContainer = styled.div`
     }
   }
 
+  .active {
+    a {
+      color: ${props => props.theme["yellow-300"]} !important;
+      background-color: ${props => props.theme["gray-600"]};
+    }
+  }
+
   ul {
     width: 100%;
+
     li {
       width: 100%;
-      a {
-        
+
+      a {  
         width: 200px;
         display: block;
         line-height: 50px;
