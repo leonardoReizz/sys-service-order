@@ -24,6 +24,7 @@ export const Content = styled(Dialog.Content)`
   padding: 1rem 2rem;
 
   h2 {
+    margin-top: 2rem;
     text-align: center;
   }
 `
