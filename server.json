@@ -17,5 +17,91 @@
       "description": "Pichau",
       "id": 5
     }
+  ],
+  "clients": [
+    {
+      "fullName": "Leonardo Reis",
+      "email": "leo@gmail.com",
+      "cpf": "",
+      "phoneOne": "",
+      "phoneTwo": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "country": "",
+      "postalCode": "",
+      "id": 1
+    },
+    {
+      "fullName": "Luiz",
+      "email": "",
+      "cpf": "",
+      "phoneOne": "",
+      "phoneTwo": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "country": "",
+      "postalCode": "",
+      "id": 2
+    }
+  ],
+  "serviceOrders": [
+    {
+      "products": [
+        {
+          "code": "32897319283",
+          "name": "SSD 140GB",
+          "priceSale": "100",
+          "pricePurchase": "200",
+          "description": "SSH Terabybite",
+          "id": 3
+        }
+      ],
+      "services": [
+        {
+          "code": "123asda",
+          "name": "Teste",
+          "price": "200",
+          "description": "a",
+          "id": 1
+        }
+      ],
+      "user": {
+        "fullName": "Leonardo Reis",
+        "email": "leo@gmail.com",
+        "cpf": "",
+        "phoneOne": "",
+        "phoneTwo": "",
+        "address": "",
+        "city": "",
+        "state": "",
+        "country": "",
+        "postalCode": "",
+        "id": 1
+      },
+      "description": "",
+      "totalServices": 200,
+      "totalProducts": 100,
+      "total": 300,
+      "id": 2
+    }
+  ],
+  "service": [
+    {
+      "code": "123asda",
+      "name": "Teste",
+      "price": "200",
+      "description": "a",
+      "id": 1
+    },
+    {
+      "code": "123",
+      "name": "Teste Dois",
+      "price": "200",
+      "type": "Formatacao",
+      "description": "Formatacao de computadores",
+      "id": 2
+    }
   ]
 }

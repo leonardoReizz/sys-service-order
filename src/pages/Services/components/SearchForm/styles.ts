@@ -1,22 +1,24 @@
 import styled from "styled-components";
 
-export const ServiceOrderContainer = styled.div`
-
-`
-
-export const ServiceOrderHeader = styled.header`
-  width: 100%;
+export const SearchFormContainer = styled.form`
   display: flex;
+  gap: 1rem;
+
+  input {
+    width: 400px;
+
+    border: 1px solid ${props => props.theme["gray-500"]};
+    padding: 0 1rem;
+    border-radius: 6px;
+
+    line-height: 40px;
+  }
 `
 
-export const NewServiceOrderButton = styled.button`
+export const SearchButton = styled.button`
   display: flex;
   align-items: center;
   gap: .5rem;
-
-  position: absolute;
-  right: 1.5rem;
-  top: 1rem;
 
   line-height: 40px;
   padding: 0 1rem;
@@ -33,5 +35,9 @@ export const NewServiceOrderButton = styled.button`
       color: ${props => props.theme.white};
       transition: background-color 0.2s;
     }
+  }
+
+  svg {
+    color: ${props => props.theme["yellow-300"]};
   }
 `

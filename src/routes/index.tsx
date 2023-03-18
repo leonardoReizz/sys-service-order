@@ -6,6 +6,7 @@ import { Dashboard } from "../pages/Dashboard";
 import { Products } from "../pages/Products";
 import { ServiceOrder } from "../pages/ServiceOrder";
 import { LayoutWithSidebar } from "./LayoutWithSidebar";
+import {Services} from "../pages/Services";
 
 export function AppRoutes() {
   return (
@@ -15,6 +16,7 @@ export function AppRoutes() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/products" element={<Products />} />
           <Route path="/clients" element={<Clients />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/serviceOrder" element={<ServiceOrder />} />
         </Route>
       </Routes>

@@ -1,6 +1,5 @@
-import styled from "styled-components";
 import * as Dialog from '@radix-ui/react-dialog'
-
+import styled from 'styled-components'
 
 export const Overlay = styled(Dialog.Overlay)`
   height: 100vh;
@@ -30,7 +29,7 @@ export const Content = styled(Dialog.Content)`
   }
 `
 
-export const ServiceOrderForm = styled.form`
+export const ProductForm = styled.form`
   display: flex;
   flex-direction: column;
 
@@ -39,11 +38,8 @@ export const ServiceOrderForm = styled.form`
 
   div {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     gap: .5rem;
-
   }
 
   input, textarea {
@@ -54,25 +50,6 @@ export const ServiceOrderForm = styled.form`
     border-radius: 6px;
 
     resize: none;
-  }
-
-  .total {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    input {
-      margin-right: auto;
-      max-width: 200px;
-    }
-  }
-
-
-  
-  button {
-    min-width: 150px;
-  }
-  span {
-    min-width: 150px;
   }
 
   textarea {
@@ -115,34 +92,10 @@ export const Buttons = styled.div`
   }
 `
 
-export const DeleteServiceOrderButton = styled.button `
+export const DeleteProductButton = styled.button `
   background: ${props => props.theme['red-300']};
 
   &:hover {
     background: ${props => props.theme['red-500']}
-  }
-`
-
-export const AddButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: .5rem;
-
-  line-height: 30px;
-  padding: 0 1rem;
-  border-radius: 6px;
-  border: 2px solid ${props => props.theme["yellow-300"]};
-
-  &:hover {
-    background: ${props => props.theme["yellow-300"]};
-    transition: background-color 0.2s;
-
-    color: ${props => props.theme.white};
-
-    svg {
-      color: ${props => props.theme.white};
-      transition: background-color 0.2s;
-    }
   }
 `

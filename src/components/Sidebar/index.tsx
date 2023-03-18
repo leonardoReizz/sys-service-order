@@ -28,6 +28,12 @@ export function Sidebar() {
             Clientes
           </Link>
         </li>
+        <li className={pathname.includes('services') ? 'active' : ''}>
+          <Link to="/services">
+            <UsersThree />
+            Serviços
+          </Link>
+        </li>
         <li className={pathname.includes('serviceOrder') ? 'active' : ''}>
           <Link to="/serviceOrder">
             <Wrench />
